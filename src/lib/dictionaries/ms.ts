@@ -44,6 +44,10 @@ export const ms: Dictionary = {
     invalidCredentials: "E-mel atau kata laluan tidak sah. Sila cuba lagi.",
     emailNotConfirmed: "Sila sahkan e-mel anda sebelum log masuk.",
     genericError: "Ralat berlaku semasa log masuk",
+    orDivider: "atau",
+    tryDemo: "Cuba demo — tiada akaun diperlukan",
+    startingDemo: "Sedang memulakan demo…",
+    demoUnavailable: "Demo tidak tersedia buat sementara waktu. Sila cuba lagi.",
   },
   signup: {
     createAccount: "Cipta akaun",

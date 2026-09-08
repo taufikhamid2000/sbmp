@@ -202,6 +202,20 @@ everywhere in the app.
 - **Every chart has a legend that IS the accessible view** — not a
   decorative label list, the actual data table alternative to the visual.
 
+## Root gating
+
+`/` is a pure redirect gate, not a public landing page: it never renders its
+own markup. It checks the session server-side and immediately redirects —
+signed-in visitors to `/dashboard` (or this project's equivalent home
+route), everyone else straight to the sign-in page (`/auth/signin` here;
+`/login` in projects that use that naming, e.g. DuitDuit). Every other
+protected route (dashboard, settings, …) also re-checks and redirects
+itself server-side — `/` isn't a substitute for that, it's just the one
+route that would otherwise dead-end an unauthenticated visitor on a
+marketing page instead of sending them to sign in. A new project built from
+this template should keep this check in its root `page.tsx` from the start,
+not bolt it on later.
+
 ## Auth pages (login / signup)
 
 Extracted from DuitDuit's split-screen login/signup. This is the single

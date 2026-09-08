@@ -29,6 +29,7 @@ export default function SignInForm({
 }) {
   const router = useRouter();
   const [isLoading, setIsLoading] = useState(false);
+  const [isDemoLoading, setIsDemoLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
   const SignInSchema = z.object({
@@ -81,6 +82,29 @@ export default function SignInForm({
     }
   };
 
+  // "Try the demo — no account needed": an anonymous Supabase session, no
+  // credentials involved. Kept as a plain client-side call (same shape as
+  // onSubmit above) rather than a server action, so the loading/error
+  // handling stays consistent with the rest of this form.
+  const handleDemo = async () => {
+    setIsDemoLoading(true);
+    setError(null);
+    try {
+      const supabase = createClient();
+      const { error: demoError } = await supabase.auth.signInAnonymously();
+      if (demoError) {
+        setError(dict.signin.demoUnavailable);
+        return;
+      }
+      router.refresh();
+      router.push("/dashboard");
+    } catch {
+      setError(dict.signin.demoUnavailable);
+    } finally {
+      setIsDemoLoading(false);
+    }
+  };
+
   return (
     <div className="flex flex-1 md:items-stretch">
       <AuthBrandingPanel brand={brand} dict={authDict} />
@@ -127,6 +151,22 @@ export default function SignInForm({
               {isLoading ? dict.signin.signingIn : dict.signin.signIn}
             </button>
           </form>
+
+          <div className="my-4 flex items-center gap-3">
+            <div className="h-px flex-1 bg-border" />
+            <span className="text-xs text-foreground/40">{dict.signin.orDivider}</span>
+            <div className="h-px flex-1 bg-border" />
+          </div>
+
+          <button
+            type="button"
+            onClick={handleDemo}
+            disabled={isDemoLoading || isLoading}
+            className="inline-flex w-full cursor-pointer items-center justify-center gap-2 rounded-full border border-border px-5 py-2.5 text-sm font-medium text-foreground transition-colors hover:bg-muted disabled:cursor-not-allowed disabled:opacity-50 active:scale-[0.97] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
+          >
+            {isDemoLoading && <Spinner />}
+            {isDemoLoading ? dict.signin.startingDemo : dict.signin.tryDemo}
+          </button>
 
           <p className="mt-6 text-center text-sm text-foreground/60">
             {dict.signin.noAccount}{" "}

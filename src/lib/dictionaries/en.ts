@@ -44,6 +44,10 @@ export const en = {
     invalidCredentials: "Invalid email or password. Please try again.",
     emailNotConfirmed: "Please verify your email before signing in.",
     genericError: "An error occurred during sign in",
+    orDivider: "or",
+    tryDemo: "Try the demo — no account needed",
+    startingDemo: "Starting demo…",
+    demoUnavailable: "The demo is temporarily unavailable. Please try again.",
   },
   signup: {
     createAccount: "Create an account",
