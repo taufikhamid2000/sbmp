@@ -1,8 +1,11 @@
-# Template Project
+# SBMP
 
-A simple Next.js template project with authentication support using Supabase.
+A multi-location small business management platform. Inventory tracking,
+sales analytics, staff scheduling, order processing, promotions, and
+FAQ/support — all in one place.
 
-**Live demo:** https://template-beta-one.vercel.app
+Built on the shared portfolio starter (Next.js 15 App Router, TypeScript,
+Tailwind, Supabase authentication).
 
 See [DESIGN.md](./DESIGN.md) for the portfolio's shared design language —
 read that before styling a new or revamped project.

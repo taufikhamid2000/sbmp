@@ -26,8 +26,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Next.js Template",
-  description: "A simple Next.js template project with authentication",
+  title: "SBMP — Small Business Management Platform",
+  description:
+    "A multi-location small business management platform. Inventory tracking, sales analytics, staff scheduling, order processing, promotions, and FAQ/support — all in one place.",
 };
 
 export default async function RootLayout({

@@ -1,6 +1,6 @@
 export const en = {
   nav: {
-    brand: "Template",
+    brand: "SBMP",
     dashboard: "Dashboard",
     settings: "Settings",
     signOut: "Sign Out",
@@ -11,20 +11,25 @@ export const en = {
   // Shared by the left branding panel on /auth/signin and /auth/signup
   // (components/auth-branding-panel.tsx).
   auth: {
-    tagline: "Ship your next idea faster.",
-    features: ["Next.js 13+ App Router", "TypeScript configuration", "Tailwind CSS", "Authentication with Supabase"],
-    footnote: "A Next.js + Supabase starter.",
+    tagline: "Run every location from one dashboard.",
+    features: [
+      "Real-time inventory across locations",
+      "Sales analytics & trends",
+      "Staff scheduling & performance",
+      "Orders, promotions & support in one place",
+    ],
+    footnote: "Small business management, unified.",
   },
   home: {
-    title: "Welcome to the Template Project",
-    subtitle: "A simple starter with authentication",
+    title: "Welcome to SBMP",
+    subtitle: "Small Business Management Platform",
     signIn: "Sign In",
     signUp: "Sign Up",
     featuresTitle: "Features",
-    feature1: "Next.js 13+ App Router",
-    feature2: "TypeScript Configuration",
-    feature3: "Tailwind CSS",
-    feature4: "Authentication with Supabase",
+    feature1: "Inventory tracking",
+    feature2: "Sales analytics",
+    feature3: "Staff scheduling",
+    feature4: "Order processing & promotions",
   },
   validation: {
     emailInvalid: "Please enter a valid email",
@@ -71,7 +76,7 @@ export const en = {
     role: "Role:",
     signInToView: "Sign in to view your profile information",
     quickActions: "Quick Actions",
-    quickActionsBody: "This is your personal dashboard. You can customize it with the components you need.",
+    quickActionsBody: "This is your business overview. See inventory, sales, and staff pages in the sidebar.",
     sessionDebug: "Session Debug",
     sessionExists: "Session exists:",
     userId: "User ID:",

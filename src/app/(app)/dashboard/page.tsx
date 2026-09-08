@@ -2,10 +2,18 @@ import { Metadata } from "next";
 import { createServerClient } from "@/utils/supabase/server";
 import { redirect } from "next/navigation";
 import { getDictionary } from "@/lib/get-dictionary";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+
+const quickStats = [
+  { label: "Today's sales", value: "RM 4,280", hint: "+12% vs yesterday" },
+  { label: "Low-stock items", value: "6", hint: "across 3 locations" },
+  { label: "Open orders", value: "18", hint: "4 pending fulfilment" },
+  { label: "Staff on shift", value: "9", hint: "of 14 scheduled today" },
+];
 
 export const metadata: Metadata = {
-  title: "Dashboard - Template",
-  description: "Your dashboard",
+  title: "Dashboard - SBMP",
+  description: "Your business overview",
 };
 
 export default async function DashboardPage() {
@@ -51,7 +59,20 @@ export default async function DashboardPage() {
     <div className="mx-auto flex w-full max-w-4xl flex-1 flex-col gap-6 px-6 py-12 animate-page-in">
       <h1 className="text-xl font-semibold text-foreground">
         {dict.dashboard.welcome(userProfile?.first_name || dict.dashboard.guest)}
-      </h1>{" "}
+      </h1>
+      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        {quickStats.map((stat) => (
+          <Card key={stat.label} className="rounded-2xl border-border bg-muted/40 shadow-none">
+            <CardHeader className="pb-2">
+              <CardTitle className="text-xs font-medium text-foreground/60">{stat.label}</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-2xl font-semibold text-foreground">{stat.value}</p>
+              <p className="mt-1 text-xs text-foreground/50">{stat.hint}</p>
+            </CardContent>
+          </Card>
+        ))}
+      </div>
       <div className="grid gap-6 md:grid-cols-2">
         <div className="rounded-2xl border border-border bg-muted/40 p-6">
           <h2 className="text-sm font-medium text-foreground/60 mb-4">{dict.dashboard.yourProfile}</h2>

@@ -2,7 +2,7 @@ import type { Dictionary } from "./en";
 
 export const ms: Dictionary = {
   nav: {
-    brand: "Template",
+    brand: "SBMP",
     dashboard: "Papan Pemuka",
     settings: "Tetapan",
     signOut: "Log keluar",
@@ -11,20 +11,25 @@ export const ms: Dictionary = {
     closeMenu: "Tutup menu",
   },
   auth: {
-    tagline: "Lancarkan idea seterusnya dengan lebih pantas.",
-    features: ["Next.js 13+ App Router", "Konfigurasi TypeScript", "Tailwind CSS", "Pengesahan dengan Supabase"],
-    footnote: "Permulaan Next.js + Supabase.",
+    tagline: "Uruskan setiap lokasi dari satu papan pemuka.",
+    features: [
+      "Inventori masa nyata merentas lokasi",
+      "Analitik & trend jualan",
+      "Penjadualan & prestasi kakitangan",
+      "Pesanan, promosi & sokongan dalam satu tempat",
+    ],
+    footnote: "Pengurusan perniagaan kecil, disatukan.",
   },
   home: {
-    title: "Selamat Datang ke Projek Template",
-    subtitle: "Permulaan mudah dengan pengesahan",
+    title: "Selamat Datang ke SBMP",
+    subtitle: "Platform Pengurusan Perniagaan Kecil",
     signIn: "Log Masuk",
     signUp: "Daftar",
     featuresTitle: "Ciri-ciri",
-    feature1: "Next.js 13+ App Router",
-    feature2: "Konfigurasi TypeScript",
-    feature3: "Tailwind CSS",
-    feature4: "Pengesahan dengan Supabase",
+    feature1: "Penjejakan inventori",
+    feature2: "Analitik jualan",
+    feature3: "Penjadualan kakitangan",
+    feature4: "Pemprosesan pesanan & promosi",
   },
   validation: {
     emailInvalid: "Sila masukkan e-mel yang sah",
@@ -71,7 +76,7 @@ export const ms: Dictionary = {
     role: "Peranan:",
     signInToView: "Log masuk untuk melihat maklumat profil anda",
     quickActions: "Tindakan Pantas",
-    quickActionsBody: "Ini ialah papan pemuka peribadi anda. Anda boleh menyesuaikannya dengan komponen yang diperlukan.",
+    quickActionsBody: "Ini ialah gambaran keseluruhan perniagaan anda. Lihat halaman inventori, jualan dan kakitangan di bar sisi.",
     sessionDebug: "Nyahpepijat Sesi",
     sessionExists: "Sesi wujud:",
     userId: "ID Pengguna:",
